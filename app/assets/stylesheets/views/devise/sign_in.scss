@@ -48,3 +48,16 @@
     }
   }
 }
+
+.btn-devise {
+  width: 70%;
+  padding: 8px 0;
+  border-radius: 8px;
+  border: none;
+  margin: 0 auto;
+}
+
+.btn-devise:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
