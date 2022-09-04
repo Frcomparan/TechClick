@@ -35,10 +35,13 @@ nav {
         width: 92%;
       }
 
-      input[type="submit"] { 
+      .searcher-submit {
+        @include center-grid;
         border-radius: 0px 8px 8px 0px;
         border: none;
         width: 50px;
+
+        i { font-size: 2rem; }
       }
     }
 
