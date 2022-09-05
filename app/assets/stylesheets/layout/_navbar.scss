@@ -1,12 +1,12 @@
 nav {
-  background-color: #0064c0;
+  background-color: $primary-color;
   display: flex;
   flex-direction: column;
   font-size: 1.5rem;
   padding: 10px 5%;
 
   .nav-searcher {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $black;
     display: flex;
     justify-content: space-between;
     padding-bottom: 8px;
@@ -58,17 +58,15 @@ nav {
       margin: 0;
       
       li {
-        border-right: 1px solid black;
+        border-right: 1px solid $black;
         padding:  0 6px;
       }
     }
 
-    .nav-filter-right { 
-      p { margin: 0; }
-     }
+    .nav-filter-right p { margin: 0; }
   }
 
   a:hover {
-    color: white;
+    color: $white;
   }
 }

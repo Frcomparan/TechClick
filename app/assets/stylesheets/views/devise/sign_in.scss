@@ -1,12 +1,12 @@
 // Iniciar servidor con ./bin/dev
 
 .devise-container {
-  width: 600px;
-  border: 1px solid rgb(145, 135, 135);
-  margin: 100px auto;
   border-radius: 10px;
-  padding: 30px;
+  border: 1px solid $grey;
   font-size: 1.5rem;
+  margin: 100px auto;
+  padding: 30px;
+  width: 600px;
 
   h2 { text-align: center; }
 
@@ -18,16 +18,16 @@
     label { font-size: 1.8rem; }
 
     .field input {
-      width: 100%;
-      background-color: rgb(113, 190, 253);
+      background-color: $secundary-color;
       border: none;
       box-shadow: $low-shadow;
       padding: 12px 12px;;
+      width: 100%;
     }
 
     input[type="checkbox"] { 
-      width: auto; 
       box-shadow: none;
+      width: auto; 
     }
 
     .actions {
@@ -35,10 +35,10 @@
       margin: 12px 0;
 
       input[type="submit"] {
-        width: 70%;
-        padding: 8px 0;
         border-radius: 8px;
         border: none;
+        padding: 8px 0;
+        width: 70%;
       }
 
       input[type="submit"]:hover {

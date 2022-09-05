@@ -2,7 +2,8 @@
 @import 'bootstrap-icons/font/bootstrap-icons';
 @import 'abstracts/mixins';
 @import 'abstracts/variables';
-@import 'base/base';
-@import 'views/devise/sign_in';
 @import 'layout/navbar';
 @import 'layout/footer';
+@import 'base/base';
+@import 'views/devise/sign_in';
+@import 'views/pages/home';

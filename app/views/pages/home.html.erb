@@ -1,3 +1,33 @@
-<h1>WELCOME TO THE FUTURE HOME PAGE</h1>
-<%= button_to "logout", destroy_user_session_path, class:'btn btn-lg btn-danger', method: :delete  %>
-<%= link_to "Cerrar sesión", destroy_user_session_path, data: { turbo_method: :delete } %>
+<div class="product-list">
+  <section class="product-filter">
+    <div class="filter-list">
+      <h2>Filtros</h2>
+      <ul>
+        <li>Futuro filtro</li>
+        <li>Futuro filtro</li>
+        <li>Futuro filtro</li>
+        <li>Futuro filtro</li>
+        <li>Futuro filtro</li>
+        <li>Futuro filtro</li>
+      </ul>
+    </div>
+    <img src="https://jcmagazine.com/wp-content/uploads/2019/12/monitor-asus.jpg" alt="ad-1">
+  </section>
+
+  <section class="product-cards">
+    <div class="product-ads">
+      <img src="https://jcmagazine.com/wp-content/uploads/2019/12/monitor-asus.jpg" alt="ad-2">
+      <img src="https://jcmagazine.com/wp-content/uploads/2019/12/monitor-asus.jpg" alt="ad-3">
+    </div>
+    <div class="product-cards-list">
+      <h2>Ofertas del día</h2>
+      <div class="product-card"></div>
+      <div class="product-card"></div>
+      <div class="product-card"></div>
+      <div class="product-card"></div>
+      <div class="product-card"></div>
+      <div class="product-card"></div>
+    </div>
+  </section>
+</div>
+<%= button_to "Cerrar Sesión", destroy_user_session_path, class:'btn btn-lg btn-danger', method: :delete  %>
