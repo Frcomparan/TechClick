@@ -5,6 +5,21 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field">
+      <%= f.label :name, 'Nombre' %>
+      <%= f.text_field :name, autocomplete: 'name' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :phone, 'Celular' %>
+      <%= f.telephone_field :phone, autocomplete: 'phone' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :birthdate, 'Fecha de nacimiento' %>
+      <%= f.date_field :birthdate, autocomplete: 'birthdate' %>
+    </div>
+
+    <div class="field">
       <%= f.label :email, 'Correo' %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>

@@ -5,21 +5,36 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field">
-      <%= f.label :email, 'Correo' %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= f.label :name, 'Nombre' %>
+      <%= f.text_field :name, autocomplete: 'name', required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :phone, 'Celular' %>
+      <%= f.telephone_field :phone, autocomplete: 'phone', required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :birthdate, 'Fecha de nacimiento' %>
+      <%= f.date_field :birthdate, autocomplete: 'birthdate', required: true %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :email, 'Correo' %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true %>
     </div>
 
     <div class="field">
       <%= f.label :password, 'Contraseña'%>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> caracteres minimos)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
+      <% end %>
+      <%= f.password_field :password, autocomplete: "new-password", required: true %>
     </div>
 
     <div class="field">
-      <%= f.label :password_confirmation, 'Confirma tu contraseña' %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      <%= f.label :password_confirmation, 'Confirma tu contraseña' %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", required: true %>
     </div>
 
     <div class="actions">

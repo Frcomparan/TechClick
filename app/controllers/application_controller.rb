@@ -3,6 +3,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
 
   def set_locale
@@ -20,7 +21,8 @@ class ApplicationController < ActionController::Base
       u.permit(:name, :email, :password, :birthdate, :phone, :active_role, :role)
     end
     devise_parameter_sanitizer.permit(:account_update) do |u|
-      u.permit(:name, :email, :password, :birthdate, :phone, :active_role, :role)
+      u.permit(:name, :email, :password, :current_password, :password_confirmation, :birthdate, :phone, :active_role,
+               :role)
     end
   end
 end

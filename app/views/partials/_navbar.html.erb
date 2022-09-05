@@ -1,6 +1,6 @@
 <nav>
   <section class="nav-searcher">
-    <span>TechClic</span>
+    <a href="/" class="logo">TechClic</a>
     <form action="">
       <input type="text">
       <button class ="searcher-submit">
@@ -18,7 +18,7 @@
       <li><a href="/">Equipos Armados</a></li>
     </ul>
     <div class="nav-filter-right">
-      <p>Mi cuenta</p>
+      <%= link_to 'Iniciar Sesión', new_user_session_path %>
     </div>
   </section>
 </nav>
