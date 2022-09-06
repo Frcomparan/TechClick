@@ -14,6 +14,12 @@
   <body>
     <%= render "partials/navbar" %>
     <main class="container">
+      <% if notice %>
+        <p class="alert alert-primary notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
       <%= yield %>
     </main>
     <%= render "partials/footer" %>

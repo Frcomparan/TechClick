@@ -6,7 +6,7 @@
 
     <div class="field">
       <%= f.label :name, 'Nombre' %>
-      <%= f.text_field :name, autocomplete: 'name', required: true %>
+      <%= f.text_field :name, autocomplete: 'name', required: true, placeholder: 'Nombre' %>
     </div>
 
     <div class="field">
@@ -16,7 +16,7 @@
 
     <div class="field">
       <%= f.label :birthdate, 'Fecha de nacimiento' %>
-      <%= f.date_field :birthdate, autocomplete: 'birthdate', required: true %>
+      <%= f.date_select :birthdate, autocomplete: 'birthdate', required: true %>
     </div>
     
     <div class="field">
