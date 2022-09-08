@@ -4,7 +4,7 @@
 
 <div>
   <%= link_to "Edit this commerce", edit_commerce_path(@commerce) %> |
-  <%= link_to "Back to commerces", commerces_path %>
+  <%= link_to "Back to commerces", user_commerces_path(current_user) %>
 
   <%= button_to "Destroy this commerce", @commerce, method: :delete %>
 </div>

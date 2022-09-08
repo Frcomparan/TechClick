@@ -12,7 +12,7 @@ class CommercesController < ApplicationController
 
   # GET /commerces/new
   def new
-    @commerce = Commerce.new
+    @commerce = current_user.commerces.new
   end
 
   # GET /commerces/1/edit
@@ -21,7 +21,9 @@ class CommercesController < ApplicationController
 
   # POST /commerces or /commerces.json
   def create
-    @commerce = Commerce.new(commerce_params)
+    @commerce = current_user.commerces.new(commerce_params)
+
+    puts "\n\n\n\n\n\n\n\n\n\n\n #{commerce_params} \n\n\n\n\n\n\n\n\n\n\n\n\n"
 
     respond_to do |format|
       if @commerce.save
@@ -65,6 +67,6 @@ class CommercesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def commerce_params
-      params.require(:commerce).permit(:name, :state, :city, :postal_code, :address, :user_id)
+      params.require(:commerce).permit(:name, :state, :city, :postal_code, :address, :user_id, :rfc, :dni_photo)
     end
 end
