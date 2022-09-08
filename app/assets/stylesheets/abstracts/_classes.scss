@@ -2,3 +2,65 @@
   font-size: 1.5rem;
   width: 100%;
 }
+
+#hidden-div {
+  display: none;
+}
+
+.upload {
+  @include center-flex-column;
+  background-color: $low-grey;
+  justify-self: center;
+  min-height: 150px;
+  min-width: 150px;
+  position: relative;
+
+  img {
+    display: none;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.photo {
+  position: relative;
+
+  .trash-icon {
+    background-color: $grey-opacity;
+    color: $black;
+    cursor: pointer;
+    display: none;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.photo:hover {
+  .trash-icon {
+    @include center-grid;
+  }
+}
+
+.file-field {
+  label {
+    display: grid;
+    grid-template-rows: auto auto;
+  }
+
+  .upload-edit {
+    img {
+      display: block;
+    }
+  }
+  
+  .upload:hover {
+    background-color: $grey!important; 
+  }
+
+  .input-file {
+    display: none;
+  }
+}

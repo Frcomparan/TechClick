@@ -13,7 +13,11 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(_resource)
-    root_path
+    if resource.seller?
+      edit_user_registration_path
+    else  
+      root_path
+    end
   end
 
   def configure_permitted_parameters

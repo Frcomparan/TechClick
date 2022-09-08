@@ -6,22 +6,27 @@
 
     <div class="field">
       <%= f.label :name, 'Nombre' %>
-      <%= f.text_field :name, autocomplete: 'name', required: true, placeholder: 'Nombre' %>
+      <%= f.text_field :name, autocomplete: 'name', required: true, placeholder: 'Ingresa tu nombre' %>
     </div>
 
     <div class="field">
       <%= f.label :phone, 'Celular' %>
-      <%= f.telephone_field :phone, autocomplete: 'phone', required: true %>
+      <%= f.telephone_field :phone, autocomplete: 'phone', required: true, placeholder: 'Ingresa tu número telefonico' %>
     </div>
 
     <div class="field">
       <%= f.label :birthdate, 'Fecha de nacimiento' %>
-      <%= f.date_select :birthdate, autocomplete: 'birthdate', required: true %>
+      <%= f.date_select :birthdate, autocomplete: 'birthdate', required: true, placeholder: 'Ingresa tu fecha de nacimiento' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :role, '¿Cómo usaras TechClic? ' %>
+      <%= f.select :role, [["Comprador", "buyer"], ["Vendedor", "seller"]], {} %>
     </div>
     
     <div class="field">
       <%= f.label :email, 'Correo' %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true, placeholder: 'Ingresa tu correo electronico' %>
     </div>
 
     <div class="field">
@@ -29,12 +34,7 @@
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> caracteres minimos)</em>
       <% end %>
-      <%= f.password_field :password, autocomplete: "new-password", required: true %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password_confirmation, 'Confirma tu contraseña' %>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", required: true %>
+      <%= f.password_field :password, autocomplete: "new-password", required: true, placeholder: 'Ingresa una contraseña' %>
     </div>
 
     <div class="actions">
