@@ -3,7 +3,7 @@ class Commerce < ApplicationRecord
 
   has_one_attached :dni_photo
 
-  # Validaciones
+  # VALIDATIONS
   # Validate dni file format
   validate :validate_dni_photo
   # Validate RFC structure

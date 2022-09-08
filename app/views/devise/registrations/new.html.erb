@@ -16,7 +16,7 @@
 
     <div class="field">
       <%= f.label :birthdate, 'Fecha de nacimiento' %>
-      <%= f.date_select :birthdate, autocomplete: 'birthdate', required: true, placeholder: 'Ingresa tu fecha de nacimiento' %>
+      <%= f.date_select :birthdate, autocomplete: 'birthdate', required: true, placeholder: 'Ingresa tu fecha de nacimiento', start_year: 1900 %>
     </div>
 
     <div class="field">
@@ -35,6 +35,11 @@
       <em>(<%= @minimum_password_length %> caracteres minimos)</em>
       <% end %>
       <%= f.password_field :password, autocomplete: "new-password", required: true, placeholder: 'Ingresa una contraseña' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation, 'Confirma tu contraseña' %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", required: true %>
     </div>
 
     <div class="actions">

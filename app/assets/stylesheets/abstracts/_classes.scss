@@ -1,6 +1,13 @@
 .alert {
+  animation-duration: 5000ms;
+  animation-fill-mode: forwards;
+  animation-name: error-animation;
   font-size: 1.5rem;
+  left: 5%;
+  position: fixed;
+  top: 100px;
   width: 100%;
+  width: 90%;
 }
 
 #hidden-div {
@@ -79,9 +86,6 @@
 }
 
 .invalid-form {
-  animation-duration: 5000ms;
-  animation-fill-mode: forwards;
-  animation-name: error-animation;
   left: 5%;
   position: fixed;
   top: 100px;
