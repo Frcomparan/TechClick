@@ -1,0 +1,50 @@
+<%= form_with(model: [user, user.commerces.new]) do |form| %>
+  
+
+  <h2>Introduce los datos de tu empresa/negocio</h2>
+  <div class="field">
+    <%= form.label :name, 'Nombre de tu empresa/negocio' %>
+    <%= form.text_field :name, autocomplete: "name", required: true, placeholder: 'Ingresa el nombre de tu empresa' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rfc, 'RFC' %>
+    <%= form.text_field :rfc, autocomplete: "rfc", required: true, placeholder: 'XXXX000000XXX ' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state, 'Estado' %>
+    <%= form.text_field :state, autocomplete: "state", required: true, placeholder: 'Jalisco' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city, 'Ciudad/Municipio' %>
+    <%= form.text_field :city, autocomplete: "city", required: true, placeholder: 'Guadalajara' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address, 'Dirección' %>
+    <%= form.text_area :address, autocomplete: "address", required: true, placeholder: 'Ingresa la dirección de tu empresa' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :postal_code, 'Codigo Postal' %>
+    <%= form.text_field :postal_code, autocomplete: "postal_code", required: true, placeholder: '00000' %>
+  </div>
+
+  <div class="field file-field">
+    <%= form.label :dni_photo do %>
+      <span><strong>Debes subir tu identificación:</strong></span>
+      <div class="upload photo">
+        <%= form.file_field :dni_photo, data: { action:"change->hello#loadDNI" }, class: 'input-file' %>
+        <span id="addDNI">+</span>
+        <img id="dni"/>
+        <div class="trash-icon"></div>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

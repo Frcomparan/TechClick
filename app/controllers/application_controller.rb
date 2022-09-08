@@ -12,8 +12,8 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def after_sign_in_path_for(_resource)
-    if resource.seller?
+  def after_sign_up_path_for(_resource)
+    if resource.seller? 
       edit_user_registration_path
     else  
       root_path

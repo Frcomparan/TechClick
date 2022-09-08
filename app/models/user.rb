@@ -5,6 +5,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :commerces
   
   enum role: { buyer: 0, seller: 1, admin: 2 }
 end
