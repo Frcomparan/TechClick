@@ -4,7 +4,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :confirmable
 
   has_many :commerces
 
@@ -18,7 +18,7 @@ class User < ApplicationRecord
   enum role: { buyer: 0, seller: 1, admin: 2 }
 
   private
-  
+
   def validate_sellers_age 
     years = ((Time.now - birthdate.to_time) / 1.years.second).to_int
     if years < 18 && role == "seller"

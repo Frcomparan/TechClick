@@ -1,4 +1,4 @@
-<div class="devise-container" data-controller="hello">
+<div class="devise-container commerce-form" data-controller="hello">
   <%= form_with(model: commerce, url: user_commerces_path) do |form| %>
     <% if commerce.errors.any? %>
       <div class="invalid-form alert alert-danger">
@@ -54,7 +54,7 @@
       <% end %>
     </div>
 
-    <div>
+    <div class="actions">
       <%= form.submit %>
     </div>
   <% end %>

@@ -12,9 +12,9 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def after_sign_up_path_for(_resource)
+  def after_sign_in_path_for(_resource)
     if resource.seller? 
-      edit_user_registration_path
+      new_user_commerce_path(current_user)
     else  
       root_path
     end
