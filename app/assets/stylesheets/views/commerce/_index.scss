@@ -1,7 +1,10 @@
 .commerces {
+  @include center-flex-column;
   font-size: 1.5rem;
   padding: 20px;
   width: 100%;
+
+  .commerce { width: 100%; }
 
   .commerce:hover { transform: scale(1.04); }
 }

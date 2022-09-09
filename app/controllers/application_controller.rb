@@ -13,11 +13,15 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(_resource)
-    if resource.seller? 
+    if resource.seller? and resource.commerces.size < 1
       new_user_commerce_path(current_user)
     else  
       root_path
     end
+  end
+
+  def after_sign_out_path_for(_resource)
+    root_path
   end
 
   def configure_permitted_parameters

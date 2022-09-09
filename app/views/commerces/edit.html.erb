@@ -4,7 +4,7 @@
 
 <br>
 
-<div>
-  <%= link_to "Show this commerce", @commerce %> |
-  <%= link_to "Back to commerces", commerces_path %>
+<div class="model-links">
+  <%= link_to "Show this commerce", @commerce %>
+  <%= link_to "Back to commerces", user_commerces_path(current_user) %>
 </div>
