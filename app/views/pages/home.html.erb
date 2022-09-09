@@ -31,3 +31,9 @@
   </section>
 </div>
 <%= button_to "Cerrar Sesión", destroy_user_session_path, class:'btn btn-lg btn-danger', method: :delete  %>
+<% if current_user %>
+  <% if current_user.seller? %>
+    <br>
+    <%= button_to "Ver comercios registrados", user_commerces_url(current_user), class:'btn btn-lg btn-danger', method: :get %>
+  <% end %>
+<% end %>

@@ -1,10 +1,7 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render @commerce %>
 
-<div>
-  <%= link_to "Edit this commerce", edit_commerce_path(@commerce) %> |
-  <%= link_to "Back to commerces", user_commerces_path(current_user) %>
-
-  <%= button_to "Destroy this commerce", @commerce, method: :delete %>
+<div class="model-links">
+  <%= link_to "Editar datos del comercio", edit_commerce_path(@commerce) %>
+  <%= link_to "Volver", user_commerces_path(current_user) %>
+  <%= button_to "Eliminar registro", @commerce, method: :delete, class: 'btn btn-lg btn-primary' %>
 </div>

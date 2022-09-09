@@ -1,32 +1,32 @@
-<div id="<%= dom_id commerce %>">
+<div id="<%= dom_id commerce %>" class="commerce">
   <p>
-    <strong>Name:</strong>
+    <strong>Nombre:</strong>
     <%= commerce.name %>
   </p>
 
+  <p>Localización</p>
   <p>
-    <strong>State:</strong>
+    <strong>Estado:</strong>
     <%= commerce.state %>
   </p>
 
   <p>
-    <strong>City:</strong>
+    <strong>Ciudad:</strong>
     <%= commerce.city %>
   </p>
 
   <p>
-    <strong>Postal code:</strong>
+    <strong>Codigo Postal:</strong>
     <%= commerce.postal_code %>
   </p>
 
   <p>
-    <strong>Address:</strong>
+    <strong>Dirección:</strong>
     <%= commerce.address %>
   </p>
 
-  <p>
-    <strong>User:</strong>
-    <%= commerce.user_id %>
-  </p>
+  <div class="img-photo">
+    <%= image_tag commerce.dni_photo.variant(resize_to_limit: [300, 300]) %>
+  </div>
 
 </div>

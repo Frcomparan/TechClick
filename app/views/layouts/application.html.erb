@@ -22,11 +22,6 @@
       <% end %>
       <%= yield %>
     </main>
-    
-    <% if current_user %>
-      <%= link_to 'Nuevo comercio', new_user_commerce_path(current_user) %>
-    <% end %>
-    
     <%= render "partials/footer" %>
   </body>
 </html>

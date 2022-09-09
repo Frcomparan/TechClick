@@ -3,7 +3,7 @@ class CommercesController < ApplicationController
 
   # GET /commerces or /commerces.json
   def index
-    @commerces = Commerce.all
+    @commerces = current_user.commerces
   end
 
   # GET /commerces/1 or /commerces/1.json
@@ -22,8 +22,6 @@ class CommercesController < ApplicationController
   # POST /commerces or /commerces.json
   def create
     @commerce = current_user.commerces.new(commerce_params)
-
-    puts "\n\n\n\n\n\n\n\n\n\n\n #{commerce_params} \n\n\n\n\n\n\n\n\n\n\n\n\n"
 
     respond_to do |format|
       if @commerce.save

@@ -1,14 +1,9 @@
-<p style="color: green"><%= notice %></p>
+<h1>Comercio</h1>
 
-<h1>Commerces</h1>
-
-<div id="commerces">
+<div id="commerces" class="commerces">
   <% @commerces.each do |commerce| %>
-    <%= render commerce %>
-    <p>
-      <%= link_to "Show this commerce", commerce %>
-    </p>
+    <%= link_to commerce do %>
+      <%= render commerce %>
+    <% end %>
   <% end %>
 </div>
-
-<%= link_to "New commerce", new_user_commerce_path %>

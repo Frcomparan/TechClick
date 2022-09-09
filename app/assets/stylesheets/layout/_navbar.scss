@@ -5,6 +5,8 @@ nav {
   font-size: 1.5rem;
   padding: 10px 5%;
 
+  a { color: $black; }
+
   .nav-searcher {
     border-bottom: 1px solid $black;
     display: flex;

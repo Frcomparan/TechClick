@@ -91,3 +91,31 @@
   top: 100px;
   width: 90%;
 }
+
+.model-links {
+  @include center-flex-row;
+  flex-wrap: wrap;
+  font-size: 1.6rem;
+  margin: 50px;
+  width: 40%;
+
+  a {
+    text-align: center;
+    width: 50%;
+  }
+  
+  a:hover { transform: scale(1.02); }
+
+  form {
+    @include center-grid;
+    margin-top: 8px;
+    width: 100%;
+
+    button { width: 50%; }
+  } 
+}
+
+.img-photo {
+  display: inline-block;
+  width: auto;
+}
