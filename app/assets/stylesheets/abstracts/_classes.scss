@@ -30,6 +30,39 @@
   }
 }
 
+.photos-field {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  .photo {
+    display: inline-block;
+    flex-grow: 1;
+    height: auto;
+    width: 33%;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+}
+
+.photos-delete {
+  justify-content: space-between;
+
+  .photo { max-width: 18%; }
+}
+
+.file-field .photos-field {
+  justify-self: baseline;
+  min-height: 80px;
+  min-width: 80px;
+}
+
+
 .photo {
   position: relative;
 

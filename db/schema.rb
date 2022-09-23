@@ -60,10 +60,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_13_115309) do
     t.string "description"
     t.decimal "price"
     t.integer "discount"
-    t.bigint "seller_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["seller_id"], name: "index_products_on_seller_id"
+    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -90,5 +90,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_13_115309) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "commerces", "users"
-  add_foreign_key "products", "users", column: "seller_id"
+  add_foreign_key "products", "users"
 end

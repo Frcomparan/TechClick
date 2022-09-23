@@ -11,32 +11,55 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="field">
+    <%= form.label :name, 'Nombre' %>
+    <%= form.text_field :name, placeholder: 'Ingresa el nombre del producto' %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
+  <div class="field">
+    <%= form.label :description, 'Descripción del producto' %>
+    <%= form.text_area :description, placeholder: 'Ingresa un descripción del producto' %>
   </div>
 
-  <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.text_field :price %>
+  <div class="field">
+    <%= form.label :price, 'Precio del producto' %>
+    <%= form.text_field :price, placeholder: 'Ingresa el precio del producto' %>
   </div>
 
-  <div>
-    <%= form.label :discount, style: "display: block" %>
-    <%= form.number_field :discount %>
+  <div class="field">
+    <%= form.label :discount, 'Descuento activo'%>
+    <%= form.number_field :discount, value: '0' %>
   </div>
 
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+  <div class="file-field">
+    <%= form.label :photos do %>
+      <span><strong>Subir fotos:</strong></span>
+      <% if action_name == 'new' %>
+        <%= form.file_field :photos, multiple: true, data: { action:"change->hello#loadFiles" }, class: 'input-file', required: true %>
+      <% else %>
+        <%= form.file_field :photos, multiple: true, data: { action:"change->hello#loadFiles" }, class: 'input-file' %>
+      <% end %>
+      <div class="upload photos-field" id="upload">
+        <span id="add">+</span>
+      </div>
+    <% end %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <% if action_name == 'edit' %>
+    <span><strong>Fotos actuales:</strong></span>
+    <div class="field photos-field photos-delete">
+      <% home.photos.each do |photo| %>
+        <%= link_to edit_home_path(home, photo_id: photo), class: 'photo' do %>
+          <%= image_tag(photo) %>
+          <div class="trash-icon">
+            <i class="fa-solid fa-trash-can"></i>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit 'Registrar producto' %>
   </div>
 <% end %>

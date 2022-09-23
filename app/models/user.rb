@@ -6,8 +6,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
-  has_many :commerces, dependet: :destroy
-  has_many :products, dependet: :destroy
+  has_many :commerces, dependent: :destroy
+  has_many :products, dependent: :destroy
 
   # VALIDATIONS
   validates :name, :birthdate, presence: true
