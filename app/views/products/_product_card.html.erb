@@ -1,0 +1,15 @@
+<figure>
+  <%= image_tag product.photos[0].variant(resize_to_limit: [500, 700]) %>
+</figure>
+
+<div class="product-card-section product-card-info">
+  <h3><%= product.name %></h3>
+  <div>
+    <i class="fa-solid fa-star"></i>
+    <span>3.5</span>
+  </div>
+</div>
+
+<div class="product-card-section product-price">
+  <span>$<%= product.price %>MXN</span>
+</div>

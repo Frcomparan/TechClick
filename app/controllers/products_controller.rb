@@ -18,6 +18,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+    delete_attachment(params[:photo_id]) if params.key?(:photo_id)
   end
 
   # POST /products or /products.json
@@ -59,6 +60,12 @@ class ProductsController < ApplicationController
     end
   end
 
+  def delete_attachment(photo_id)
+    attachment = ActiveStorage::Attachment.find(photo_id)
+    attachment.purge
+    redirect_to edit_product_url(@product)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
@@ -67,6 +74,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:name, :description, :price, :discount, :user_id)
+      params.require(:product).permit(:name, :description, :price, :discount, :user_id, photos: [])
     end
 end

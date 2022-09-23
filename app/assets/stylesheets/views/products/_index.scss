@@ -1,0 +1,13 @@
+.my-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+
+  .product-card {
+    height: auto;
+    max-height: 400px;
+    max-width: 24%;
+    width: 24%;
+  }
+}

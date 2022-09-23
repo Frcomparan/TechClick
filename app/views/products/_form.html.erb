@@ -48,8 +48,8 @@
   <% if action_name == 'edit' %>
     <span><strong>Fotos actuales:</strong></span>
     <div class="field photos-field photos-delete">
-      <% home.photos.each do |photo| %>
-        <%= link_to edit_home_path(home, photo_id: photo), class: 'photo' do %>
+      <% product.photos.each do |photo| %>
+        <%= link_to edit_product_path(product, photo_id: photo), class: 'photo' do %>
           <%= image_tag(photo) %>
           <div class="trash-icon">
             <i class="fa-solid fa-trash-can"></i>
