@@ -11,19 +11,16 @@
   figure {
     @include center-flex-row;
     border-bottom: 1px solid $low-grey;
+    height: 100%;
     margin-bottom: 12px;
     margin: 0;
     padding: 4px;
     width: 100%;
 
-    a {
-      overflow: hidden;
-
-      img {
-        max-height: 220px;
-        max-width: 220px;
-        object-fit: cover;
-      }
+    img {
+      max-height: 220px;
+      max-width: 220px;
+      object-fit: cover;
     }
   }
 

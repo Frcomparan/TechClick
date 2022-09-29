@@ -178,3 +178,31 @@
   display: inline-block;
   width: auto;
 }
+
+.option-links {
+  align-items: center;
+  display: grid;
+  font-size: 2rem;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  margin-top: 20px;
+  width: 30%;
+
+  a:hover {
+    color: $black;
+    text-decoration: underline;
+  }
+
+  form {
+    grid-column: 1 / 3;
+
+    button {
+      border-radius: 8px;
+      border: none;
+      box-shadow: $low-shadow;
+      padding: 0 16px;
+    }
+
+    button:hover { transform: scale(1.02); }
+  }
+}

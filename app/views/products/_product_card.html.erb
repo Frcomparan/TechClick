@@ -1,8 +1,8 @@
-<figure>
-  <%= link_to product do %>
-    <%= image_tag product.photos[0].variant(resize_to_limit: [500, 700]) %>
-  <% end %>
-</figure>
+<%= link_to product do %>
+  <figure>
+      <%= image_tag product.photos[0].variant(resize_to_limit: [500, 700]) %>
+  </figure>
+<% end %>
 
 <div class="product-card-section product-card-info">
   <%= link_to product do %>
