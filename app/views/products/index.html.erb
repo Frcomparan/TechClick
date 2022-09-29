@@ -1,13 +1,29 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Products</h1>
-
-<div class="products my-products">
-  <% @products.each do |product| %>
-    <div class="product-card">
-      <%= render 'product_card', product: product %>
+<div class="product-list">
+  <section class="product-filter">
+    <div class="filter-list">
+      <h2>Filtros</h2>
+      <ul>
+        <li>Futuro filtro</li>
+        <li>Futuro filtro</li>
+        <li>Futuro filtro</li>
+        <li>Futuro filtro</li>
+        <li>Futuro filtro</li>
+        <li>Futuro filtro</li>
+      </ul>
     </div>
-  <% end %>
-</div>
+    <img src="https://jcmagazine.com/wp-content/uploads/2019/12/monitor-asus.jpg" alt="ad-1">
+  </section>
 
-<%= link_to "New product", new_product_path %>
+  <section class="product-cards">
+    <div>
+      <h2>Productos disponibles</h2>
+      <div class="products my-products">
+        <% @products.each do |product| %>
+          <div class="product-card">
+            <%= render 'product_card', product: product %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</div>

@@ -5,7 +5,7 @@ nav {
   font-size: 1.5rem;
   padding: 10px 5%;
 
-  a { color: $black; }
+  a { color: $white; }
 
   .nav-searcher {
     border-bottom: 1px solid $black;
@@ -40,6 +40,7 @@ nav {
     }
 
     i { 
+      color: $white;
       font-size: 3rem;
       transform: rotateY(180deg);
     }
@@ -60,7 +61,7 @@ nav {
       margin: 0;
       
       li {
-        border-right: 1px solid $black;
+        border-right: 1px solid $white;
         padding:  0 6px;
       }
     }
@@ -69,6 +70,6 @@ nav {
   }
 
   a:hover {
-    color: $white;
+    color: $black;
   }
 }

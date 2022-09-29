@@ -1,6 +1,7 @@
 class CommercesController < ApplicationController
   before_action :set_commerce, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: %i[ show ]
+  load_and_authorize_resource
 
   # GET /commerces or /commerces.json
   def index
@@ -9,6 +10,7 @@ class CommercesController < ApplicationController
 
   # GET /commerces/1 or /commerces/1.json
   def show
+    puts "\n\n\n\n\n\n\n #{params[:id]} \n\n\n\n\n\n\n"
   end
 
   # GET /commerces/new
