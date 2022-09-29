@@ -4,9 +4,9 @@
 
 <div class="products my-products">
   <% @products.each do |product| %>
-    <%= link_to product, class: 'product-card' do %>
+    <div class="product-card">
       <%= render 'product_card', product: product %>
-    <% end %>
+    </div>
   <% end %>
 </div>
 

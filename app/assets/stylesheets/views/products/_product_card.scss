@@ -2,8 +2,9 @@
   border-radius: 8px;
   border: 1px solid $low-grey;
   display: grid;
-  grid-template-rows: 225px minmax(20px, 1fr) 40px;
-  padding: 10px;
+  grid-template-rows: 225px minmax(20px, 55px) 40px;
+  height: 100%;
+  row-gap: 10px;
 
   &:hover { border: 1px solid $grey; }
 
@@ -12,14 +13,17 @@
     border-bottom: 1px solid $low-grey;
     margin-bottom: 12px;
     margin: 0;
-    max-height: 220px;
-    min-height: 220px;
+    padding: 4px;
     width: 100%;
 
-    img {
-      max-height: 100%;
-      max-width: 100%;
-      object-fit: cover;
+    a {
+      overflow: hidden;
+
+      img {
+        max-height: 220px;
+        max-width: 220px;
+        object-fit: cover;
+      }
     }
   }
 
@@ -28,10 +32,15 @@
     align-self: baseline;
     display: flex;
     justify-content: space-between;
+    max-height: 100%;
+    overflow: hidden;
+    padding: 0 10px;
+
+    a { width: 80%; }
 
     h3 {
-      font-size: 1.6rem;
-      width: 80%;
+      font-size: 1.5rem;
+      text-align: justify;
     }
 
     & > div  {
@@ -50,18 +59,18 @@
     button {
       align-items: center;
       background-color: $primary-color;
-      border-radius: 4px;
+      border-radius: 8px;
       border: none;
       display: flex;
       justify-content: space-between;
       overflow: hidden;
-      width: 140px;
+      width: 100px;
 
-      i, span { font-size: 1.8rem; }
+      i, span { font-size: 1.4rem; }
 
       & > div { 
         @include center-grid;
-        width: 19%;
+        width: 28%;
       }
 
       i { background-color: $primary-color; }
@@ -74,9 +83,8 @@
     }
   }
 
-  .product-price { justify-content: right; }
-
-  .product-card-info {
-    height: auto;
+  .product-price { 
+    align-items: center;
+    justify-content: space-between; 
   }
 }

@@ -31,9 +31,9 @@
     <%= form.number_field :discount, value: '0' %>
   </div>
 
+  <span><strong>Subir fotos:</strong></span>
   <div class="file-field">
     <%= form.label :photos do %>
-      <span><strong>Subir fotos:</strong></span>
       <% if action_name == 'new' %>
         <%= form.file_field :photos, multiple: true, data: { action:"change->hello#loadFiles" }, class: 'input-file', required: true %>
       <% else %>
@@ -41,6 +41,8 @@
       <% end %>
       <div class="upload photos-field" id="upload">
         <span id="add">+</span>
+      </div>
+      <div class="photos-bg">
       </div>
     <% end %>
   </div>

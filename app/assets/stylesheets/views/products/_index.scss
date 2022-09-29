@@ -1,13 +1,13 @@
 .my-products {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-rows: repeat(370px);
+  justify-content: center;
   width: 100%;
 
   .product-card {
-    height: auto;
-    max-height: 400px;
-    max-width: 24%;
-    width: 24%;
+    height: 100%;
+    width: 100%;
   }
 }
