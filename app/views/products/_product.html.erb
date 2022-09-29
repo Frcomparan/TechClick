@@ -9,13 +9,13 @@
       <div class="product-images">
         <figure class="product-image-main">
           <% if product.photos[0] %>
-            <%= image_tag product.photos[0].variant(resize_to_limit: [500, 500]) %>
+            <%= image_tag product.photos[0].variant(resize_to_limit: [500, 500]), class: "img-main active" %>
           <% end %>
         </figure>
         <aside class="product-images-list">
           <% product.photos.each do |photo| %>
-            <figure>
-              <%= image_tag photo, class: "photo-secundary" %>
+            <figure class="photo-secundary">
+              <%= image_tag photo %>
             </figure>
           <% end %>
         </aside>
@@ -138,3 +138,20 @@
     </section>
   </main>
 </div>
+
+<script>
+  function photos(){
+    const main_img = document.querySelector('.img-main')
+    const thumbnails = document.querySelectorAll('.photo-secundary')
+
+    thumbnails.forEach(thumb => {
+      thumb.addEventListener('click', function(){
+        const active = document.querySelector('.active')
+        active.classList.remove('active')
+        thumb.classList.add('active')
+        main_img.src = thumb.children[0].src
+      })
+    })
+  }
+  photos()
+</script>
