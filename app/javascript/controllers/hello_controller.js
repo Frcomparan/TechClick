@@ -22,4 +22,34 @@ export default class extends Controller {
     img.src = URL.createObjectURL(event.target.files[0]);
     img.style.display = 'block';
   };
+
+  loadFiles(event) {
+    let container = document.getElementById('upload');
+    document.getElementById('add').style.display = 'none';
+    const uploadPhotos = event.target.files;
+    if (document.getElementsByClassName('output').length > 0) {
+      this.removeChilds(document.getElementsByClassName('output'));
+    }
+    this.addImages(uploadPhotos, container);
+    document.getElementById('upload').style.backgroundColor = '#ffff'
+  };
+  
+  removeChilds(imgs) {
+    imgs = document.getElementsByClassName('output');
+    let parent = imgs[0].parentNode;
+    let size = imgs.length;
+    for (let key = 0; key <= size; key++) {
+      parent.removeChild(parent.lastChild);
+    }
+  };
+  
+  addImages(uploadPhotos, container) {
+    for (let key = 0; key < uploadPhotos['length']; key++) {
+      let img = '<img class="photo output"/>';
+      container.innerHTML = container.innerHTML + img;
+      img = document.getElementsByClassName('output')
+      img[key].src = URL.createObjectURL(uploadPhotos[key]);
+      img[key].style.display = 'block'
+    }
+  };
 }

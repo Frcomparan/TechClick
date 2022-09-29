@@ -1,0 +1,10 @@
+<%= render @product %>
+
+<% if current_user == @product.user %>
+  <div class="option-links">
+    <%= link_to "Editar", edit_product_path(@product) %>
+    <%= link_to "Volver", products_path %>
+    <%= button_to "Eliminar", @product, method: :delete %>
+  </div>
+<% end %>
+

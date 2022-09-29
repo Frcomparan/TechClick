@@ -1,0 +1,157 @@
+<div id="<%= dom_id product %>" class="product">
+  <header>
+    <h1><%= product.name %></h1>
+  </header>
+  <main class="product-info">
+
+    <section class="product-left-section">
+
+      <div class="product-images">
+        <figure class="product-image-main">
+          <% if product.photos[0] %>
+            <%= image_tag product.photos[0].variant(resize_to_limit: [500, 500]), class: "img-main active" %>
+          <% end %>
+        </figure>
+        <aside class="product-images-list">
+          <% product.photos.each do |photo| %>
+            <figure class="photo-secundary">
+              <%= image_tag photo %>
+            </figure>
+          <% end %>
+        </aside>
+      </div>
+
+      <div class="product-seller-info">
+
+        <div class="product-seller">
+          <i class="fa-regular fa-circle-user"></i>
+          <span> <%= product.user.name %> </span>
+        </div>
+
+        <div class="product-score">
+          <i class="fa-solid fa-star"></i>
+          <span>3.5</span>
+          <span>(4 opiniones)</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="product-right-section">
+
+      <div class="product-description">
+
+        <div class="product-features">
+          <h3>Descripción</h3>
+          <p> <%= product.description %> </p>
+        </div>
+
+        <div class="product-price">
+          <h3> $<%= product.price %>MXN</h3>
+          <p>Compra a MSI disponible</p>
+          <p>Costo de envio: $0.0</p>
+          <p>10 disponibles</p>
+          <input type="number" name="" id="" class="btn-add-item">
+          <div class="btn-container">
+            <button class="btn-buy-item">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-comments">
+        <h2>Comentarios</h2>
+
+        <div class="product-comments-list">
+
+          <div class="comment">
+
+            <div class="product-seller-info">
+
+              <div class="product-seller">
+                <i class="fa-regular fa-circle-user"></i>
+                <span> <%= product.user.name %> </span>
+              </div>
+
+              <div class="product-score">
+                <i class="fa-solid fa-star"></i>
+                <span>3.5</span>
+              </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam alias similique, disorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam alias similique, distinctio quas hic placeat blanditiis soluta fugit officia beatae harum, enim sed ad voluptas exercitationem! Verorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam alias similique, distinctio quas hic placeat blanditiis soluta fugit officia beatae harum, enim sed ad voluptas exercitationem! Vertinctio quas hic placeat blanditiis soluta fugit officia beatae harum, enim sed ad voluptas exercitationem! Vero veniam labore non.</p>
+          </div>
+
+          <div class="comment">
+
+            <div class="product-seller-info">
+
+              <div class="product-seller">
+                <i class="fa-regular fa-circle-user"></i>
+                <span> <%= product.user.name %> </span>
+              </div>
+
+              <div class="product-score">
+                <i class="fa-solid fa-star"></i>
+                <span>3.5</span>
+              </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam alias similique, distinctio quas hic placeat blanditiis soluta fugit officia beatae harum, enim sed ad voluptas exercitationem! Vero veniam labore non.</p>
+          </div>
+
+          <div class="comment">
+
+            <div class="product-seller-info">
+
+              <div class="product-seller">
+                <i class="fa-regular fa-circle-user"></i>
+                <span> <%= product.user.name %> </span>
+              </div>
+
+              <div class="product-score">
+                <i class="fa-solid fa-star"></i>
+                <span>3.5</span>
+              </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam alias similique, distinctio quas hic placeat blanditiis soluta fugit officia beatae harum, enim sed ad voluptas exercitationem! Vero veniam labore non.</p>
+          </div>
+
+          <div class="comment">
+
+            <div class="product-seller-info">
+
+              <div class="product-seller">
+                <i class="fa-regular fa-circle-user"></i>
+                <span> <%= product.user.name %> </span>
+              </div>
+
+              <div class="product-score">
+                <i class="fa-solid fa-star"></i>
+                <span>3.5</span>
+              </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam alias similique, distinctio quas hic placeat blanditiis soluta fugit officia beatae harum, enim sed ad voluptas exercitationem! Vero veniam labore non.</p>
+          </div>
+        </div>
+        <div class="comment-show-more">
+          <a href="/" >Mostrar más</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+  function photos(){
+    const main_img = document.querySelector('.img-main')
+    const thumbnails = document.querySelectorAll('.photo-secundary')
+
+    thumbnails.forEach(thumb => {
+      thumb.addEventListener('click', function(){
+        const active = document.querySelector('.active')
+        active.classList.remove('active')
+        thumb.classList.add('active')
+        main_img.src = thumb.children[0].src
+      })
+    })
+  }
+  photos()
+</script>

@@ -16,7 +16,7 @@ body {
 
 .container {
   @include center-flex-column;
-  margin: 40px auto;
+  margin: 15px auto;
   max-width: 1170px;
   min-height: calc(100vh - 230px);
 }

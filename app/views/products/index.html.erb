@@ -15,25 +15,15 @@
   </section>
 
   <section class="product-cards">
-    <div class="product-ads">
-      <img src="https://jcmagazine.com/wp-content/uploads/2019/12/monitor-asus.jpg" alt="ad-2">
-      <img src="https://jcmagazine.com/wp-content/uploads/2019/12/monitor-asus.jpg" alt="ad-3">
-    </div>
     <div>
       <h2>Productos disponibles</h2>
       <div class="products my-products">
         <% @products.each do |product| %>
           <div class="product-card">
-            <%= render 'products/product_card', product: product %>
+            <%= render 'product_card', product: product %>
           </div>
         <% end %>
       </div>
     </div>
   </section>
 </div>
-<% if current_user %>
-  <% if current_user.seller? %>
-    <br>
-    <%= button_to "Ver comercios registrados", user_commerces_url(current_user), class:'btn btn-lg btn-danger', method: :get %>
-  <% end %>
-<% end %>

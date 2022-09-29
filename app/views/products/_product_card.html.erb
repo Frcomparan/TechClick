@@ -1,0 +1,26 @@
+<%= link_to product do %>
+  <figure>
+      <%= image_tag product.photos[0].variant(resize_to_limit: [500, 700]) %>
+  </figure>
+<% end %>
+
+<div class="product-card-section product-card-info">
+  <%= link_to product do %>
+    <h3><%= product.name %></h3>
+  <% end %>
+
+  <div>
+    <i class="fa-solid fa-star"></i>
+    <span>3.5</span>
+  </div>
+</div>
+
+<div class="product-card-section product-price">
+  <button>
+    <div>
+      <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+    <span>Agregar</span>
+  </button>
+  <span>$<%= product.price %>MXN</span>
+</div>

@@ -1,0 +1,13 @@
+.my-products {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-rows: repeat(370px);
+  justify-content: center;
+  width: 100%;
+
+  .product-card {
+    height: 100%;
+    width: 100%;
+  }
+}

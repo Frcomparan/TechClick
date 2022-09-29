@@ -1,0 +1,12 @@
+
+<div class="form-container" data-controller="hello">
+  <h1>Editar producto</h1>
+  <%= render "form", product: @product %>
+</div>
+
+<br>
+
+<div>
+  <%= link_to "Show this product", @product %> |
+  <%= link_to "Back to products", products_path %>
+</div>
