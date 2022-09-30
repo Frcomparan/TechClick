@@ -66,10 +66,44 @@ nav {
       }
     }
 
+    .nav-filter-right {
+      @include center-flex-row;
+      color: $white;
+      gap: 8px;
+      position: relative;
+
+      .menu-icon {
+        @include center-grid;
+        height: 20px;
+        width: 20px;
+      }
+
+      .menu-icon:hover { border: 1px solid $white; }
+
+      .options-menu {
+        background: $primary-color;
+        border-radius: 4px;
+        box-shadow: $low-shadow;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        position: absolute;
+        right: 0;
+        top: 35px;
+        width: 200px;
+        z-index: 3;
+
+        & > div {
+          border-bottom: 1px solid $grey;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+
     .nav-filter-right p { margin: 0; }
   }
 
-  a:hover {
-    color: $black;
-  }
+  a:hover { color: $black; }
 }

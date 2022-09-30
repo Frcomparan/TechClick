@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     resources :commerces
   end
   root 'pages#home'
+  get '/my_products' => 'products#my_products', as: 'my_products'
 end

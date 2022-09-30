@@ -1,13 +1,6 @@
 .alert {
-  animation-duration: 5000ms;
-  animation-fill-mode: forwards;
-  animation-name: error-animation;
   font-size: 1.5rem;
-  left: 5%;
-  position: fixed;
-  top: 100px;
   width: 100%;
-  width: 90%;
 }
 
 #hidden-div {
@@ -132,24 +125,7 @@
 
 }
 
-@keyframes error-animation {
-  50% { opacity: 1; }
-
-  99% { z-index: 2; }
-
-  100% {
-    display: none;
-    opacity: 0;
-    z-index: -1;
-  }
-}
-
-.invalid-form {
-  left: 5%;
-  position: fixed;
-  top: 100px;
-  width: 90%;
-}
+.invalid-form { width: 100%; }
 
 .model-links {
   @include center-flex-row;
@@ -206,3 +182,5 @@
     button:hover { transform: scale(1.02); }
   }
 }
+
+.inactive { display: none !important; }
