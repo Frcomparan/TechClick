@@ -40,7 +40,7 @@ nav {
     }
 
     i { 
-      color: $white;
+      color: $black;
       font-size: 3rem;
       transform: rotateY(180deg);
     }
@@ -95,6 +95,7 @@ nav {
         z-index: 3;
 
         & > div {
+          padding: 6px 0;
           border-bottom: 1px solid $grey;
           display: flex;
           flex-direction: column;

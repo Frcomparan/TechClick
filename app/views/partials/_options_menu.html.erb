@@ -12,10 +12,10 @@
       <div class="user-options">
         <%= link_to "Registrar producto", new_product_path %>
         <%= link_to "Mis productos", my_products_path %>
-        <% if current_user.commerces.size == 0 %>
+        <% if current_user.commerces.size < 1 || !current_user.commerces.first.persisted?%>
           <%= link_to "Registrar comercio", new_user_commerce_url(current_user) %>
         <% else %>
-          algo
+          <%= link_to "Ver comercio", commerce_url(current_user.commerces.first) %>
         <% end %>
       </div>
     <% end %>
