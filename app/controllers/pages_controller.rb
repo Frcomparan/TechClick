@@ -14,4 +14,9 @@ class PagesController < ApplicationController
       @products = Product.order(:id).all
     end
   end
+
+  def filter
+    @products = Product.where(id: params[:products_id])
+    @products = @products.search_filter(params[:filter])
+  end
 end

@@ -3,11 +3,9 @@
     <div class="filter-list">
       <h2>Filtros</h2>
       <ul>
-        <li>Futuro filtro</li>
-        <li>Futuro filtro</li>
-        <li>Futuro filtro</li>
-        <li>Futuro filtro</li>
-        <li>Futuro filtro</li>
+        <li><%= link_to 'Menor costo', filter_path(filter: 'price_lower', products_id: @products.ids.to_a) %></li>
+        <li><%= link_to 'Mayor costo', filter_path(filter: 'price_higher', products_id: @products.ids.to_a) %></li>
+        <li><%= link_to 'Novedades', filter_path(filter: 'date', products_id: @products.ids.to_a) %></li>
         <li>Futuro filtro</li>
       </ul>
     </div>
