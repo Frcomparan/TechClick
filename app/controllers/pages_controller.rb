@@ -8,6 +8,10 @@ class PagesController < ApplicationController
   end
 
   def searcher
-    @products = Product.all
+    if !params[:search].nil?
+      @products = Product.search(params[:search])
+    else
+      @products = Product.order(:id).all
+    end
   end
 end

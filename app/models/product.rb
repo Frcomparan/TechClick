@@ -7,6 +7,14 @@ class Product < ApplicationRecord
   validates :discount, numericality: { only_integer: true, message: "Debes ingresar un numero entero" }
   validate :validate_photos
 
+  def self.search(search)
+    if search !=""
+      product = self.where(['name ILIKE ?', "%#{search}%"])
+    else 
+      self.order(:id).all
+    end
+  end
+
   private
   def validate_photos
     if photos.size > 0

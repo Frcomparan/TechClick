@@ -1,9 +1,9 @@
 .my-products {
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(3, minmax(230px, 303px));
   grid-template-rows: repeat(370px);
-  justify-content: center;
+  justify-content: left;
   width: 100%;
 
   .product-card {

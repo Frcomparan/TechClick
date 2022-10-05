@@ -1,12 +1,12 @@
 <nav>
   <section class="nav-searcher">
     <a href="/" class="logo">TechClic</a>
-    <form action="">
-      <input type="text">
-      <button class ="searcher-submit">
+    <%= form_tag(searcher_path, method: :get) do %>
+      <%= text_field_tag :search, params[:search], placeholder: 'Buscar...', value: '' %>
+      <%= button_tag(type: 'submit', class: 'searcher-submit') do %>
         <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
-    </form>
+      <% end %>
+    <% end %>
     <i class="fa-solid fa-cart-shopping"></i>
   </section>
 
