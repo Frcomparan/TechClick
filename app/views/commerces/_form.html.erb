@@ -2,13 +2,14 @@
   <% if action_name == 'edit' %>
     <%= form_with(model: commerce) do |form| %>
       <% if commerce.errors.any? %>
-        <div class="invalid-form alert alert-danger">
+        <div class="invalid-form alert alert-danger alert-dismissible fade show" role="alert" >
           <strong><span>Ha ocurrido un error:</span></strong><br>
           <aside>
             <% commerce.errors.each do |error| %>
               <span><%= error.type %></span><br>
             <% end %>
           </aside>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       <% end %>
       
@@ -64,13 +65,14 @@
   
     <%= form_with(model: commerce, url: user_commerces_path) do |form| %>
       <% if commerce.errors.any? %>
-        <div class="invalid-form alert alert-danger">
+        <div class="invalid-form alert alert-danger alert-dismissible fade show" role="alert" >
           <strong><span>Ha ocurrido un error:</span></strong><br>
           <aside>
             <% commerce.errors.each do |error| %>
               <span><%= error.type %></span><br>
             <% end %>
           </aside>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       <% end %>
       

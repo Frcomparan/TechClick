@@ -17,12 +17,22 @@
       <li><a href="/">Hardware</a></li>
       <li><a href="/">Equipos Armados</a></li>
     </ul>
-    <div class="nav-filter-right">
-      <% if !user_signed_in? %>
-        <%= link_to 'Iniciar Sesión', new_user_session_path %>
+    <div class="nav-filter-right" data-controller="hello">
+      <% if user_signed_in? %>
+        <% if current_user.admin? %>
+          <span>Admin</span>
+        <% elsif current_user.seller? %>
+          <span>Vendedor</span>
+        <% else %>
+          <span>Comprador</span>
+        <% end %>
       <% else %>
-        <%= link_to "Cerrar sesión", destroy_user_session_path, data: { turbo_method: :delete } %>
+        <span>Invitado</span>
       <% end %>
+      <div class="menu-icon" id="menu-icon" data-action="hello#menuInteraction">
+        <i class="fa-solid fa-caret-down"></i>
+      </div>
+      <%= render "partials/options_menu" %>
     </div>
   </section>
 </nav>

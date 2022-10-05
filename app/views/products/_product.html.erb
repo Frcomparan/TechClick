@@ -141,7 +141,7 @@
 
 <script>
   function photos(){
-    const main_img = document.querySelector('.img-main')
+    const mainImg = document.querySelector('.img-main')
     const thumbnails = document.querySelectorAll('.photo-secundary')
 
     thumbnails.forEach(thumb => {
@@ -149,7 +149,7 @@
         const active = document.querySelector('.active')
         active.classList.remove('active')
         thumb.classList.add('active')
-        main_img.src = thumb.children[0].src
+        mainImg.src = thumb.children[0].src
       })
     })
   }

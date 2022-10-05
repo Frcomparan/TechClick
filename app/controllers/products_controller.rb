@@ -5,9 +5,12 @@ class ProductsController < ApplicationController
 
   # GET /products or /products.json
   def index
-    @products = current_user.products
+    @products = Product.all
   end
 
+  def my_products
+    @products = current_user.products
+  end
   # GET /products/1 or /products/1.json
   def show
   end
