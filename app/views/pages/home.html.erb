@@ -1,36 +1,4 @@
-<div class="product-list">
-  <section class="product-filter">
-    <div class="filter-list">
-      <h2>Filtros</h2>
-      <ul>
-        <li>Futuro filtro</li>
-        <li>Futuro filtro</li>
-        <li>Futuro filtro</li>
-        <li>Futuro filtro</li>
-        <li>Futuro filtro</li>
-        <li>Futuro filtro</li>
-      </ul>
-    </div>
-    <img src="https://jcmagazine.com/wp-content/uploads/2019/12/monitor-asus.jpg" alt="ad-1">
-  </section>
-
-  <section class="product-cards">
-    <div class="product-ads">
-      <img src="https://jcmagazine.com/wp-content/uploads/2019/12/monitor-asus.jpg" alt="ad-2">
-      <img src="https://jcmagazine.com/wp-content/uploads/2019/12/monitor-asus.jpg" alt="ad-3">
-    </div>
-    <div>
-      <h2>Productos disponibles</h2>
-      <div class="products my-products">
-        <% @products.each do |product| %>
-          <div class="product-card">
-            <%= render 'products/product_card', product: product %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </section>
-</div>
+<%= render 'pages/home_template', products: @products %>
 <% if current_user %>
   <% if current_user.seller? %>
     <br>

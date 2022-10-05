@@ -6,4 +6,8 @@ class PagesController < ApplicationController
   def home
     @products = Product.all
   end
+
+  def searcher
+    @products = Product.all
+  end
 end

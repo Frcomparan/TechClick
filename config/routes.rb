@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   end
   root 'pages#home'
   get '/my_products' => 'products#my_products', as: 'my_products'
+  get '/searcher' => 'pages#searcher', as: 'searcher'
 end
