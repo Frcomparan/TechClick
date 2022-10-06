@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name, 'Nombre' %>
+    <%= form.label :name, 'Nombre de la publicación' %>
     <%= form.text_field :name, placeholder: 'Ingresa el nombre del producto', required: true %>
   </div>
 
@@ -22,8 +22,24 @@
   </div>
 
   <div class="field">
+    <%= form.label :brand, 'Marca del producto' %>
+    <%= form.text_field :brand, placeholder: 'Ingresa la marca del producto', required: true, value: '' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :model, 'Modelo del producto' %>
+    <%= form.text_field :model, placeholder: 'Ingresa el modelo del producto (si aplica)' %>
+  </div>
+
+  <div class="field">
     <%= form.label :price, 'Precio del producto' %>
     <%= form.text_field :price, placeholder: 'Ingresa el precio del producto', required: true %>
+  </div>
+
+  <div class="field select-field">
+     <%= form.label :category_id, 'Seleccione una categoria para el producto' %>
+     <% category_array = Category.all.map { |category| [category.name, category.id] } %>
+     <%= form.select :category_id, options_for_select(category_array) %>
   </div>
 
   <div class="field">

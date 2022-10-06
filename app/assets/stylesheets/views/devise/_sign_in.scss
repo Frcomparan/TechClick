@@ -25,7 +25,25 @@
       outline: 0;
     }
 
-    .field input:focus, .field textarea:focus{
+    .select-field {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      label { width: 100%; }
+
+      select {
+        background-color: $white;
+        border: 1px solid $grey;
+        border-radius: 4px;
+        padding: 12px 12px;
+        min-width: 30%;
+        max-width: 40%;
+        outline: 0;
+      }
+    }
+
+    .field input:focus, .field textarea:focus, .field select:focus {
       border: 3px solid $primary-color;
     }
 
