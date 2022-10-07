@@ -44,13 +44,17 @@
         <div class="product-features">
           <h3>Descripción</h3>
           <p> <%= product.description %> </p>
+          <p><strong>Marca: </strong> <%= product.brand %> </p>
+          <% if product.model %>
+            <p> <strong>Modelo: </strong><%= product.model %> </p>
+          <% end %>
         </div>
 
         <div class="product-price">
           <h3> $<%= product.price %>MXN</h3>
           <p>Compra a MSI disponible</p>
           <p>Costo de envio: $0.0</p>
-          <p>10 disponibles</p>
+          <p><%= product.quantity %> disponibles</p>
           <input type="number" name="" id="" class="btn-add-item">
           <div class="btn-container">
             <button class="btn-buy-item">Comprar</button>

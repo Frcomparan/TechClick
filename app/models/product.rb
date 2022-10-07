@@ -16,7 +16,7 @@ class Product < ApplicationRecord
 
   def self.search(search)
     if search !=""
-      product = self.where('name ILIKE ? OR description ILIKE ?', "%#{search}%", "%#{search}%")
+      product = self.where('name ILIKE ? OR description ILIKE ? OR model ILIKE ? OR brand ILIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
     else 
       self.order(:id).all
     end

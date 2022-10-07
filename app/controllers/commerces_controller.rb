@@ -10,7 +10,6 @@ class CommercesController < ApplicationController
 
   # GET /commerces/1 or /commerces/1.json
   def show
-    puts "\n\n\n\n\n\n\n #{params[:id]} \n\n\n\n\n\n\n"
   end
 
   # GET /commerces/new
@@ -28,7 +27,7 @@ class CommercesController < ApplicationController
 
     respond_to do |format|
       if @commerce.save
-        format.html { redirect_to commerce_url(@commerce), notice: "Commerce was successfully created." }
+        format.html { redirect_to commerce_url(@commerce), notice: "El registro del negocio fue exitoso" }
         format.json { render :show, status: :created, location: @commerce }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -41,7 +40,7 @@ class CommercesController < ApplicationController
   def update
     respond_to do |format|
       if @commerce.update(commerce_params)
-        format.html { redirect_to commerce_url(@commerce), notice: "Commerce was successfully updated." }
+        format.html { redirect_to commerce_url(@commerce), notice: "Los datos del comercio se actualizaron exitosamente" }
         format.json { render :show, status: :ok, location: @commerce }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -55,7 +54,7 @@ class CommercesController < ApplicationController
     @commerce.destroy
 
     respond_to do |format|
-      format.html { redirect_to commerces_url, notice: "Commerce was successfully destroyed." }
+      format.html { redirect_to commerces_url, notice: "El negocio fue eliminado exitosamente" }
       format.json { head :no_content }
     end
   end
