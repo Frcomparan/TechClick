@@ -2,7 +2,7 @@
   <% if !user_signed_in? %>
     <div>
       <%= link_to 'Iniciar Sesión', new_user_session_path %>
-      <%= link_to 'Crear cuenta', new_user_registration_path %>
+      <%= link_to 'Registrarse', new_user_registration_path %>
     </div>
   <% else %>
     <div>
@@ -20,13 +20,6 @@
       </div>
     <% end %>
   <% end %>
-  <div>
-    <a href="">Link de prueba</a>
-    <a href="">Link de prueba</a>
-    <a href="">Link de prueba</a>
-    <a href="">Link de prueba</a>
-    <a href="">Link de prueba</a>
-  </div>
 </div>
 <script>
   function menuInteraction() {

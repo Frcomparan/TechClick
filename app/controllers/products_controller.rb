@@ -4,13 +4,15 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, except: %i[ show ]
   load_and_authorize_resource
 
+  Pagy::DEFAULT[:items] = 12
+
   # GET /products or /products.json
   def index
-    @products = Product.all
+    @pagy, @products = pagy(Product.all)
   end
 
   def my_products
-    @products = current_user.products
+    @pagy, @products = pagy(current_user.products)
   end
   # GET /products/1 or /products/1.json
   def show

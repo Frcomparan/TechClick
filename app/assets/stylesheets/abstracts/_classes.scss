@@ -186,6 +186,8 @@
 
 .inactive { display: none !important; }
 
+.filter-selected { color: $primary-color; }
+
 .general-filter {
   align-items: center;
   border-bottom: 1px solid $grey;

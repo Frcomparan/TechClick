@@ -154,10 +154,13 @@
       border-radius: 8px;
       border: none;
       box-shadow: $medium-shadow;
-      font-size: 1.6rem;
+      font-size: 1.3rem;
+      margin-top: 6px;
       padding: 10px 20px;
-      width: 70%;
+      width: 80%;
     }
+
+    .btn-add-cart { background-color: $secundary-color; }
 
     button:hover { transform: scale(1.02); }
   }

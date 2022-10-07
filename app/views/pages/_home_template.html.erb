@@ -4,7 +4,7 @@
       <h2>Categorías</h2>
       <ul>
         <% Category.all.order(:name).map do |category| %>
-          <li><%= link_to category.name, category_filter_path(category: category.name) %></li>
+          <li class="filter-item"><%= link_to category.name, category_filter_path(category: category.name) %></li>
         <% end %>
       </ul>
     </div>
@@ -18,7 +18,7 @@
     </div>
     <div>
       <div class="general-filter" >
-        <ul id="filter-list" class="inactive">
+        <ul id="filter-list" >
           <li><%= link_to 'Novedades', filter_path(filter: 'date', products_id: @products.ids.to_a) %></li>
           <li><%= link_to 'Menor costo', filter_path(filter: 'price_lower', products_id: @products.ids.to_a) %></li>
           <li><%= link_to 'Mayor costo', filter_path(filter: 'price_higher', products_id: @products.ids.to_a) %></li>
@@ -47,5 +47,13 @@
     })
   }
 
-  filterInteraction();
+  // function markFilter(event) {
+  //   const validation = (event.target.matches('#filterItem'));
+
+  //   if (!validation) {
+  //     event.target.classList.add('filter-selected')
+  //   } 
+  // }
+
+  // document.onclick = markFilter;
 </script>
