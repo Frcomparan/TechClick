@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  include Pagy::Backend
   before_action :set_product, only: %i[ edit update destroy ]
   before_action :authenticate_user!, except: %i[ show ]
   load_and_authorize_resource

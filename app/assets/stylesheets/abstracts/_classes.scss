@@ -219,3 +219,20 @@
     }
   }
 }
+
+.pagy-nav {
+  align-items: center;
+  background: none;
+  color: $black;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: center;
+
+  a { color: $black; }
+
+  a:hover {
+    color: $primary-color;
+    text-decoration: underline;
+  }
+}
