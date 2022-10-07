@@ -1,12 +1,11 @@
 <div class="product-list">
   <section class="product-filter">
     <div class="filter-list">
-      <h2>Filtros</h2>
+      <h2>Categorías</h2>
       <ul>
-        <li><%= link_to 'Menor costo', filter_path(filter: 'price_lower', products_id: @products.ids.to_a) %></li>
-        <li><%= link_to 'Mayor costo', filter_path(filter: 'price_higher', products_id: @products.ids.to_a) %></li>
-        <li><%= link_to 'Novedades', filter_path(filter: 'date', products_id: @products.ids.to_a) %></li>
-        <li>Futuro filtro</li>
+        <% Category.all.order(:name).map do |category| %>
+          <li><%= link_to category.name, category_filter_path(category: category.name) %></li>
+        <% end %>
       </ul>
     </div>
     <img src="https://jcmagazine.com/wp-content/uploads/2019/12/monitor-asus.jpg" alt="ad-1">
@@ -18,6 +17,14 @@
       <img src="https://jcmagazine.com/wp-content/uploads/2019/12/monitor-asus.jpg" alt="ad-3">
     </div>
     <div>
+      <div class="general-filter" >
+        <ul id="filter-list" class="inactive">
+          <li><%= link_to 'Novedades', filter_path(filter: 'date', products_id: @products.ids.to_a) %></li>
+          <li><%= link_to 'Menor costo', filter_path(filter: 'price_lower', products_id: @products.ids.to_a) %></li>
+          <li><%= link_to 'Mayor costo', filter_path(filter: 'price_higher', products_id: @products.ids.to_a) %></li>
+        </ul>
+        <i class="fa-solid fa-filter" id="filter-icon"></i>
+      </div>
       <h2>Productos disponibles</h2>
       <div class="products my-products">
         <% @products.each do |product| %>
@@ -29,3 +36,15 @@
     </div>
   </section>
 </div>
+<script>
+  function filterInteraction() {
+    const filterIcon = document.getElementById('filter-icon')
+    const filterList = document.getElementById('filter-list')
+
+    filterIcon.addEventListener('click', ()=> {
+      filterList.classList.contains('inactive') ? filterList.classList.remove('inactive') : filterList.classList.add('inactive')
+    })
+  }
+
+  filterInteraction();
+</script>

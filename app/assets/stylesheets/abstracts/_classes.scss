@@ -185,3 +185,37 @@
 }
 
 .inactive { display: none !important; }
+
+.general-filter {
+  align-items: center;
+  border-bottom: 1px solid $grey;
+  display: flex;
+  font-size: 2rem;
+  justify-content: right;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+
+  ul {
+    gap: 8px;
+    max-height: 30px;
+    overflow: hidden;
+    text-align: right;
+
+    li { display: inline-block; }
+  }
+
+  a { 
+    border-right: 1px solid $black; 
+    padding-right: 8px;
+  }
+
+  i {
+    font-size: 2.3rem;
+    margin-left: 8px;
+
+    &:hover {
+      color: $primary-color;
+      cursor: pointer;
+    }
+  }
+}

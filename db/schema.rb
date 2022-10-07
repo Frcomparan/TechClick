@@ -70,8 +70,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_06_220522) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id"
-    t.string "brand", default: "Intel", null: false
-    t.integer "quantity", default: 5, null: false
+    t.string "brand"
+    t.integer "quantity", default: 1, null: false
     t.string "model"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"

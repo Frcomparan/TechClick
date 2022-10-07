@@ -19,4 +19,9 @@ class PagesController < ApplicationController
     @products = Product.where(id: params[:products_id])
     @products = @products.search_filter(params[:filter])
   end
+
+  def category
+    @products = Category.find_by(name: params[:category]).products
+    render :home
+  end
 end

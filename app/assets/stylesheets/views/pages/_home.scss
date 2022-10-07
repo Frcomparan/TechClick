@@ -10,18 +10,19 @@
   width: 20%;
 
   .filter-list {
-    border: 1px solid $black;
+    border: 1px solid $low-grey;
+    font-size: 1.8rem;
     margin-bottom: 12px;
-    padding: 16px;
     width: 90%;
 
-    h2 { 
-      font-size: 3rem;
-      text-align: center; 
+    h2 {
+      background-color: $low-grey;
+      color: $grey;
+      padding: 4px 0;
+      text-align: center;
     }
 
-    ul li { font-size: 1.8rem; }
-
+    li { margin: 0 16px; }
   }
 
   img {

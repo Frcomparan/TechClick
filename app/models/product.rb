@@ -1,10 +1,12 @@
 class Product < ApplicationRecord
   belongs_to :user
+  belongs_to :category
   has_many_attached :photos
 
-  validates :name, :description, :price, :discount, presence: true;
+  validates :name, :description, :price, :discount, :brand, :quantity, presence: true;
   validates :price, numericality: { message: "El precio debe tener un valor numerico" }
   validates :discount, numericality: { only_integer: true, message: "Debes ingresar un numero entero" }
+  validates :quantity, numericality: { grater_than: 0, message: "Debes haber stock del producto para poder registrarlo" }
   validate :validate_photos
 
   scope :filter_by_price_lower, -> { order :price }

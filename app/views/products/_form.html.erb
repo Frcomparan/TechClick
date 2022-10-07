@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :brand, 'Marca del producto' %>
-    <%= form.text_field :brand, placeholder: 'Ingresa la marca del producto', required: true, value: '' %>
+    <%= form.text_field :brand, placeholder: 'Ingresa la marca del producto', required: true %>
   </div>
 
   <div class="field">
@@ -38,8 +38,12 @@
 
   <div class="field select-field">
      <%= form.label :category_id, 'Seleccione una categoria para el producto' %>
-     <% category_array = Category.all.map { |category| [category.name, category.id] } %>
-     <%= form.select :category_id, options_for_select(category_array) %>
+     <%= form.collection_select :category_id, Category.order(:name), :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity, 'Disponibilidad del producto' %>
+    <%= form.number_field :quantity, placeholder: 'Ingresa stock actual del producto', required: true %>
   </div>
 
   <div class="field">

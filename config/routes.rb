@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get '/my_products' => 'products#my_products', as: 'my_products'
   get '/searcher' => 'pages#searcher', as: 'searcher'
   get '/filter' => 'pages#filter', as: 'filter'
+  get '/category_filter' => 'pages#category', as: 'category_filter'
 end
