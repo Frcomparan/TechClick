@@ -186,7 +186,10 @@
 
 .inactive { display: none !important; }
 
-.filter-selected { color: $primary-color; }
+.filter-selected a { 
+  color: $black; 
+  font-weight: 900;
+}
 
 .general-filter {
   align-items: center;

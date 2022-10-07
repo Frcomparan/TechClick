@@ -4,7 +4,11 @@
       <h2>Categorías</h2>
       <ul>
         <% Category.all.order(:name).map do |category| %>
-          <li class="filter-item"><%= link_to category.name, category_filter_path(category: category.name) %></li>
+          <% if @category_selected %>
+            <li class="filter-item <%= 'filter-selected' if @category_selected.to_i == category.id %>"><%= link_to category.name, category_filter_path(category: category.name, category_selected: category.id) %></li>
+          <% else %>
+            <li class="filter-item"><%= link_to category.name, category_filter_path(category: category.name, category_selected: category.id)  %></li>
+          <% end %>
         <% end %>
       </ul>
     </div>
@@ -19,9 +23,15 @@
     <div>
       <div class="general-filter" >
         <ul id="filter-list" >
-          <li><%= link_to 'Novedades', filter_path(filter: 'date', products_id: @products.ids.to_a) %></li>
-          <li><%= link_to 'Menor costo', filter_path(filter: 'price_lower', products_id: @products.ids.to_a) %></li>
-          <li><%= link_to 'Mayor costo', filter_path(filter: 'price_higher', products_id: @products.ids.to_a) %></li>
+          <% if @category_selected %>
+            <li class="<%= 'filter-selected' if @filter_selected == '1' %>" ><%= link_to 'Novedades', filter_path(filter: 'date', products_id: @products.ids.to_a, category_selected: @category_selected, filter_selected: 1) %></li>
+            <li class="<%= 'filter-selected' if @filter_selected == '2' %>" ><%= link_to 'Menor costo', filter_path(filter: 'price_lower', products_id: @products.ids.to_a, category_selected: @category_selected, filter_selected: 2) %></li>
+            <li class="<%= 'filter-selected' if @filter_selected == '3' %>" ><%= link_to 'Mayor costo', filter_path(filter: 'price_higher', products_id: @products.ids.to_a,category_selected: @category_selected, filter_selected: 3) %></li>          
+          <% else %>
+            <li><%= link_to 'Novedades', filter_path(filter: 'date', products_id: @products.ids.to_a, category_selected: @category_selected, filter_selected: 1) %></li>
+            <li><%= link_to 'Menor costo', filter_path(filter: 'price_lower', products_id: @products.ids.to_a, category_selected: @category_selected, filter_selected: 2) %></li>
+            <li><%= link_to 'Mayor costo', filter_path(filter: 'price_higher', products_id: @products.ids.to_a,category_selected: @category_selected, filter_selected: 3) %></li>
+          <% end %>
         </ul>
         <i class="fa-solid fa-filter" id="filter-icon"></i>
       </div>
@@ -46,14 +56,4 @@
       filterList.classList.contains('inactive') ? filterList.classList.remove('inactive') : filterList.classList.add('inactive')
     })
   }
-
-  // function markFilter(event) {
-  //   const validation = (event.target.matches('#filterItem'));
-
-  //   if (!validation) {
-  //     event.target.classList.add('filter-selected')
-  //   } 
-  // }
-
-  // document.onclick = markFilter;
 </script>
