@@ -1,18 +1,42 @@
-<h2>Cart show</h2>
-<ul>
-  <% @cart.line_items.each do |line_item| %>
-    <li>Item: <%= line_item.product.name %>/ Price: <%= number_to_currency(line_item.product.price) %>/ Quantity: <%= line_item.quantity %>/ Total Price: <%= number_to_currency(line_item.total_price) %>
-    <ul>
-      <li>
-        <%= link_to "Add one", line_item_add_path(:id => line_item), data: { turbo_method: :post } %>
-        <%= link_to "Reduce one", line_item_reduce_path(:id => line_item), data: { turbo_method: :post } %>
-      </li>
-      <li>
-        <%= button_to "Remove item", line_item_path(line_item), method: :delete %>
-      </li>
-    </ul>
-  <% end %>
-</ul>
-<h3>Sub total: <%= number_to_currency(@cart.sub_total) %></h3>
+<h2>Tu carrito</h2>
 
-<%= link_to "Empty cart", cart_path(@current_cart), data: { turbo_method: :delete, confirm: "Are you sure?"} %>
+<table class="cart-table">
+  <tr>
+    <th>Producto</th>
+    <th>Precio</th>
+    <th>Cantidad</th>
+    <th>Total</th>
+  </tr>
+  <% @cart.line_items.each do |line_item| %>
+    <tr>
+      <td class="td-product">
+        <figure>
+          <%= image_tag line_item.product.photos[0].variant(resize_to_limit: [500, 500]) %>
+        </figure>
+        <p><%= line_item.product.name %></p>
+      </td>
+      <td class="td-price">
+        <p> <%= number_to_currency(line_item.product.price, locale: :en) %> </p>
+      </td>
+      <td class="td-quantity">
+        <div>
+          <%= link_to "+", line_item_add_path(:id => line_item), class: 'add-cart', data: { turbo_method: :post } %>
+          <span> <%= line_item.quantity %> </span>
+          <%= link_to "-", line_item_reduce_path(:id => line_item), class: 'remove-cart', data: { turbo_method: :post } %>
+        </div>
+      </td>
+      <td class="td-total">
+        <div>
+          <p> <%= number_to_currency(line_item.total_price, locale: :en) %> </p>
+          <%= button_to "x", line_item_path(line_item), method: :delete %>
+        </div>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<div class="footer-cart">
+  <h2>Total: <%= number_to_currency(@cart.sub_total, locale: :en) %></h2>
+  <%= link_to "Vaciar carrito", cart_path(@current_cart), data: { turbo_method: :delete, confirm: "Are you sure?"} %>
+</div>
+
