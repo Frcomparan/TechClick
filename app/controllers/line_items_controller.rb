@@ -18,7 +18,9 @@ class LineItemsController < ApplicationController
   
     # Save and redirect to cart show path
     @line_item.save
-    redirect_to cart_path(current_cart)
+    respond_to do |format|
+      format.js {render inline: "location.reload();" }
+    end
   end
 
   def destroy

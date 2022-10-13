@@ -1,4 +1,4 @@
-<nav>
+<nav class='principal-nav'>
   <section class="nav-searcher">
     <a href="/" class="logo">TechClic</a>
     <%= form_tag(searcher_path, method: :get) do %>
@@ -7,7 +7,12 @@
         <i class="fa-solid fa-magnifying-glass"></i>
       <% end %>
     <% end %>
-    <i class="fa-solid fa-cart-shopping"></i>
+    <%= link_to cart_path(@current_cart), class: 'cart-link' do %>
+      <i class="fa-solid fa-cart-shopping"></i>
+      <div class="new-item <%= 'inactive' if @current_cart.products.size == 0 %>">
+      <span> <%= @current_cart.total_products if @current_cart.products.size > 0 %> </span>
+      </div>
+    <% end %>
   </section>
 
   <section class="nav-filter">
