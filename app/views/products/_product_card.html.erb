@@ -16,11 +16,11 @@
 </div>
 
 <div class="product-card-section product-price">
-  <button>
+  <%= button_to line_items_path(:product_id => product.id) do %>
     <div>
       <i class="fa-solid fa-cart-shopping"></i>
     </div>
     <span>Agregar</span>
-  </button>
+  <% end %>
   <span>$<%= product.price %>MXN</span>
 </div>
