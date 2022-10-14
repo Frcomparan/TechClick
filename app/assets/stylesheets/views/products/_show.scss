@@ -135,7 +135,12 @@
 
     .btn-container {
       @include center-grid;
-      width: 100%
+      width: 100%;
+
+      form { 
+        @include center-grid;
+        width: 100%; 
+      }
     }
 
     input[type="number"] {

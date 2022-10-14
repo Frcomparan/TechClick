@@ -55,9 +55,9 @@
           <p>Compra a MSI disponible</p>
           <p>Costo de envio: $0.0</p>
           <p><%= product.quantity %> disponibles</p>
-          <input type="number" name="" id="" class="btn-add-item">
+          <input type="number" value="1" name="" id="" class="btn-add-item">
           <div class="btn-container">
-            <button class="btn-buy-item btn-add-cart">Agregar al carrito</button>
+            <%= button_to 'Agregar al carrito', line_items_path(:product_id => product.id), class: 'btn-add-cart'%>
           </div>
           <div class="btn-container">
             <button class="btn-buy-item">Comprar</button>
