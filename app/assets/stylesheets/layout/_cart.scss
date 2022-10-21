@@ -64,9 +64,9 @@
     }
     .add-cart:hover, .remove-cart:hover { background-color: $primary-color; }
 
-    .add-cart { border-radius: 10px 0 0 10px; }
+    .remove-cart { border-radius: 10px 0 0 10px; }
 
-    .remove-cart { border-radius: 0 10px 10px 0; }
+    .add-cart { border-radius: 0 10px 10px 0; }
   }
 
   .td-total div {

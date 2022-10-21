@@ -20,9 +20,9 @@
       </td>
       <td class="td-quantity">
         <div>
-          <%= link_to "+", line_item_add_path(:id => line_item), class: 'add-cart', data: { turbo_method: :post } %>
-          <span> <%= line_item.quantity %> </span>
           <%= link_to "-", line_item_reduce_path(:id => line_item), class: 'remove-cart', data: { turbo_method: :post } %>
+          <span> <%= line_item.quantity %> </span>
+          <%= link_to "+", line_item_add_path(:id => line_item), class: 'add-cart', data: { turbo_method: :post } %>
         </div>
       </td>
       <td class="td-total">
