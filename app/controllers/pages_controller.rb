@@ -9,14 +9,17 @@ class PagesController < ApplicationController
   Pagy::DEFAULT[:items] = 12
 
   def home
-    @pagy, @products = pagy(Product.all)
+    puts "\n\n\n\n\n\n\n\n\n #{Product.all.size} \n\n\n\n\n\n"
+    @pagy, @products = pagy(Product.all.where('quantity > 0'))
+    puts "\n\n\n\n\n\n\n\n\n #{@pagy.vars} \n\n\n\n\n\n"
+    puts "\n\n\n\n\n\n\n\n\n #{@products.size} \n\n\n\n\n\n"
   end
 
   def searcher
     if !params[:search].nil?
       @pagy, @products = pagy(Product.search(params[:search]))
     else
-      @pagy, @products = pagy(Product.order(:id).all)
+      @pagy, @products = pagy(Product.order(:id).all.where('quantity > 0'))
     end
   end
 
@@ -26,7 +29,7 @@ class PagesController < ApplicationController
   end
 
   def category
-    @pagy, @products = pagy(Category.find_by(name: params[:category]).products)
+    @pagy, @products = pagy(Category.find_by(name: params[:category]).products.where('quantity > 0')  )
     render :home
   end
 
