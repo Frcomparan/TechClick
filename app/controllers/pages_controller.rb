@@ -9,23 +9,25 @@ class PagesController < ApplicationController
   Pagy::DEFAULT[:items] = 12
 
   def home
-    puts "\n\n\n\n\n\n\n\n\n #{Product.all.size} \n\n\n\n\n\n"
-    @pagy, @products = pagy(Product.all.where('quantity > 0'))
+    @filtered_products = Product.all.where('quantity > 0')
+    @pagy, @products = pagy(@filtered_products)
     puts "\n\n\n\n\n\n\n\n\n #{@pagy.vars} \n\n\n\n\n\n"
     puts "\n\n\n\n\n\n\n\n\n #{@products.size} \n\n\n\n\n\n"
   end
 
   def searcher
     if !params[:search].nil?
-      @pagy, @products = pagy(Product.search(params[:search]))
+      @filtered_products = Product.search(params[:search])
+      @pagy, @products = pagy(@filtered_products)
     else
-      @pagy, @products = pagy(Product.order(:id).all.where('quantity > 0'))
+      @filtered_products = Product.order(:id).all.where('quantity > 0')
+      @pagy, @products = pagy(@filtered_products)
     end
   end
 
   def filter
-    @pagy, @products = pagy(Product.where(id: params[:products_id]))
-    @products = @products.search_filter(params[:filter])
+    @filtered_products = Product.where(id: params[:products_id]).search_filter(params[:filter])
+    @pagy, @products = pagy(@filtered_products)
   end
 
   def category
