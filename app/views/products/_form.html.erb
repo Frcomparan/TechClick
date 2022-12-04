@@ -1,14 +1,14 @@
 <%= form_with(model: product) do |form| %>
   <% if product.errors.any? %>
     <div class="invalid-form alert alert-danger alert-dismissible fade show" role="alert" >
-          <strong><span>Ha ocurrido un error:</span></strong><br>
-          <aside>
-            <% product.errors.each do |error| %>
-              <span><%= error.message %></span><br>
-            <% end %>
-          </aside>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+      <strong><span>Ha ocurrido un error:</span></strong><br>
+      <aside>
+        <% product.errors.each do |error| %>
+          <span><%= error.message %></span><br>
+        <% end %>
+      </aside>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
   <% end %>
 
   <div class="field">

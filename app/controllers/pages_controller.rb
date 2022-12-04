@@ -11,8 +11,6 @@ class PagesController < ApplicationController
   def home
     @filtered_products = Product.all.where('quantity > 0')
     @pagy, @products = pagy(@filtered_products)
-    puts "\n\n\n\n\n\n\n\n\n #{@pagy.vars} \n\n\n\n\n\n"
-    puts "\n\n\n\n\n\n\n\n\n #{@products.size} \n\n\n\n\n\n"
   end
 
   def searcher
